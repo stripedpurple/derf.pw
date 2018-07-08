@@ -1,0 +1,96 @@
+// Mixins
+=alert($color, $bg)
+  background: $bg
+  border: 2px solid $color
+  border-radius: 5px
+  color: $color
+  padding: 15px 5px
+
+// SASS Body
+body
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  background: #333 url("../images/beach-dawn-dusk-1144176.jpg") no-repeat center center
+  background-size: cover
+  color: #fefefe
+
+
+a
+  color: #00B7FF
+  transition: all ease 0.3s
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+
+.main-container
+  display: flex
+  align-items: center
+  justify-content: center
+  height: calc(100vh - 1rem)
+
+.btn
+  border: none
+  background-color: #f1f1f1
+  color: #333
+  padding: 5px 10px
+  border-radius: 3px
+  transition: all ease 0.3s
+
+  &.btn-default
+    background: #2196F1
+    color: #f1f1f1
+
+  &:hover
+    text-decoration: underline
+
+  &:focus
+    outline: none
+    border-color: #9ecaed
+    box-shadow: 0 0 10px #9ecaed
+
+
+input
+  padding: 4px 10px
+  border-radius: 5px
+  border: 1px solid #f1f1f1
+
+  &:focus
+    outline: none
+    border-color: #9ecaed
+    box-shadow: 0 0 10px #9ecaed
+
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right
+
+.text-left
+  text-align: left
+
+.success
+  +alert(#33b314, #dbffd1)
+
+.warn
+  +alert(#dea800, #ffef95)
+
+.danger
+  +alert(#ff6565, #ffd1d1)
+
+h1
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.5)
+
+.footer
+  width: 100%
+
+  .left
+    width: calc(50% - 1.1rem)
+    padding-left: 1rem
+    display: inline-block
+
+  .right
+    width: calc(50% - 1.2rem)
+    padding-right: 1rem
+    text-align: right
+    display: inline-block

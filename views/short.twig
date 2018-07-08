@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <div class="main-container text-center">
+        <div>
+            <h1>Don't get short with me!</h1>
+            <div>
+                <form action="/shorten" id="shorten">
+                    <input type="text" name="shortURL" placeholder="website...">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="get short" class="btn btn-default">
+                </form>
+            </div>
+
+            <br>
+
+            <div id="content"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left">&copy; Austin Barrett | all rights reserved</div>
+        <div class="right">photo by <a href="https://www.pexels.com/@blitzboy">Sindre Strøm</a></div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel='stylesheet' href='/stylesheets/short.css'/>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="/javascripts/short.js"></script>
+{% endblock %}
