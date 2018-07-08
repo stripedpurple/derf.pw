@@ -30,7 +30,8 @@ router.post('/shorten', function(req, res, next) {
         if (err) {
             db.put(key, shortURL, function(err){
                 if (err) {
-                    res.status(500).send();
+                    console.log(err);
+                    res.status(500).send(err);
                     return -1;
                 }
                 res.send(key);
