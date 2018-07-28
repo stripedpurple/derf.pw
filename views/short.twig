@@ -3,12 +3,25 @@
 {% block body %}
     <div class="main-container text-center">
         <div>
-            <h1>Don't get short with me!</h1>
+            <h1><span class='strike'>Don't<span></span></span> get short with me!</h1>
             <div>
                 <form action="/shorten" id="shorten">
-                    <input type="text" name="shortURL" placeholder="website...">
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="get short" class="btn btn-default">
+                    <div>
+                        <input type="text" name="shortURL" placeholder="website...">
+                    </div>
+
+                    <div class='text-left'>
+                        <input type='checkbox' name='doesExpire' id='doesExpire'>
+                        <label for='doesExpire'>link expires</label>
+                    </div>
+                    
+                    <div>
+                        <input class='hidden' type='date' name='expiry' id='expiry'>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="get short" class="btn btn-default">
+                    </div>
                 </form>
             </div>
 
@@ -20,7 +33,7 @@
 
     <div class="footer">
         <div class="left">&copy; Austin Barrett | all rights reserved</div>
-        <div class="right">photo by <a href="https://www.pexels.com/@blitzboy">Sindre Strøm</a></div>
+        <div class="right text-right">photo by <a href="https://www.pexels.com/@blitzboy">Sindre Strøm</a></div>
     </div>
 {% endblock %}
 
@@ -31,5 +44,6 @@
 
 {% block js %}
     {{ parent() }}
+    <script src="/javascripts/jquiry.js"></script>
     <script src="/javascripts/short.js"></script>
 {% endblock %}

@@ -17,6 +17,11 @@
                 });
             return false;
         });
+
+        $("#doesExpire").click(function(event){
+            $("#expiry").toggleClass('hidden');
+            // event.preventDefault();
+        })
     });
 })();
 
