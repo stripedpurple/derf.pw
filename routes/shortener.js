@@ -1,11 +1,28 @@
 let express = require('express');
 let router = express.Router();
 let cm = require('../lib/common');
-let db = require('level')('/opt/dev/shortendb', key);
+let db = require('level')('/opt/dev/shortendb');
 
 /* GET home page. */
 router.get('/short', function(req, res, next) {
     res.render('short');
+});
+
+router.get('/short/list', function(req, res, next) {
+    let list = [];
+    db.createReadStream()
+        .on('data', function (data) {
+            list.push(data.key + '=' + data.value)
+        })
+        .on('error', function (err) {
+            console.log('Oh my!', err)
+        })
+        .on('close', function () {
+            console.log('Stream closed')
+        })
+        .on('end', function () {
+            res.send(list)
+        })
 });
 
 router.get('/:id', function(req, res){
