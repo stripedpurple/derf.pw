@@ -29,9 +29,9 @@ router.get('/:id', function(req, res){
         if (err) {
             res.status(404).send(err);
         }else{
-            // res.redirect(data.url);
-            console.log(JSON.stringify(data));
-            res.send();
+            res.redirect(data.url);
+            // console.log(JSON.stringify(data));
+            // res.send();
         }
     });
 });

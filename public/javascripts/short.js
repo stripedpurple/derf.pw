@@ -7,7 +7,7 @@
 
             $.post('/shorten', $('#shorten').serialize(), function (data) {
                 let shortURL = hostname + (port ? ":" + port : "") + '/' + data;
-                $('#content').html('<p class="text-center success">' + '<a href="http://' + shortURL + '" target="_blank">' + shortURL + '</a>' + ' ' + '<a class="btn btn-default" href="#" onclick="copyToClipboard(\'' + shortURL +'\')">Copy</a></p>').slideDown();
+                $('#content').html('<p class="text-center success">' + '<a href="http://' + shortURL + '" target="_blank">' + shortURL + '</a>' + ' ' + '<a class="btn btn-default" href="#" onclick="copyToClipboard(\'' + shortURL + '\')">Copy</a></p>').slideDown();
             })
                 .done(function () {
                     console.log("DONE!!!");
@@ -18,7 +18,7 @@
             return false;
         });
 
-        $("#doesExpire").click(function(event){
+        $("#doesExpire").click(function (event) {
             $("#expiry").toggleClass('hidden');
             // event.preventDefault();
         })
