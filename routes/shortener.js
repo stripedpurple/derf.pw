@@ -26,12 +26,12 @@ router.get('/list', function(req, res, next) {
 
 router.get('/:id', function(req, res){
     db.get(req.params.id, function(err, data){
+        data = JSON.parse(data)
         if (err) {
             res.status(404).send(err);
         }else{
+            console.log(data.url)
             res.redirect(data.url);
-            // console.log(JSON.stringify(data));
-            // res.send();
         }
     });
 });
