@@ -6,7 +6,6 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let sassMiddleware = require('node-sass-middleware');
 
-let internet = require('./routes/internet');
 let shortener = require('./routes/shortener');
 
 let app = express();
